@@ -1,0 +1,44 @@
+
+# i3status configuration file
+general {
+        output_format = "i3bar"
+                colors = true
+                interval = 1
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "disk /"
+order += "wireless wlan"
+order += "battery 0"
+order += "volume master"
+order += "time"
+
+cpu_usage {
+        format = " %usage"
+}
+
+memory {
+        format = " %used"
+}
+
+disk "/" {
+        format = " %avail"
+}
+
+wireless wlan0 {
+        format_up = "WiFi: %essid %quality"
+                format_down = "WiFi: down"
+}
+
+battery 0 {
+        format = "󰄌 %percentage"
+}
+
+volume master {
+        format = "󰕾 %volume"
+}
+
+time {
+        format = " %d-%m-%Y  %H:%M:%S "
+}

@@ -1,0 +1,67 @@
+
+
+[general]
+live_config_reload = true
+
+[font]
+size = 9
+
+[font.bold]
+family = "0xProto Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "0xProto Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "0xProto Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "0xProto Nerd Font"
+style = "Regular"
+
+[colors.primary]
+background = "#1a1a1a" # transparent background
+foreground = "#ffffff"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+padding = { x = 10, y = 5 }
+dynamic_padding = true
+opacity = 0.85
+blur = true
+decorations_theme_variant = "Dark"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+# copy/paste
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+# create new window - Control+T | Control+N
+[[keyboard.bindings]]
+key = "T"
+mods = "Control"
+action = "CreateNewWindow"
+[[keyboard.bindings]]
+key = "N"
+mods = "Control"
+action = "CreateNewWindow"
+
+# quit window/instance - Control+W | Control+Q
+[[keyboard.bindings]]
+key = "Q"
+mods = "Control"
+action = "Quit"

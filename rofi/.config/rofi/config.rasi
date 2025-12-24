@@ -1,0 +1,10 @@
+
+configuration {
+modi: "drun,run,window";
+      show-icons: true;
+font: "0xProto Nerd Font 11";
+      drun-use-desktop-cache: false;
+}
+
+@theme "~/.config/rofi/drun.rasi"
+// @theme "Arc-Dark"

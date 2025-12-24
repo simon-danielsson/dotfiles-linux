@@ -1,0 +1,83 @@
+* {
+bg: #1a1a1a;
+fg: #ffffff;
+accent: #333333;
+accent2: #888888;
+cursor: none;
+        def-rd: 10px;
+        rnd-rd: 1000px;
+        background-color: @bg;
+        text-color: @fg;
+}
+
+window {
+width: 40%;
+border: 0px;
+        border-color: @accent;
+        border-radius: @def-rd;
+}
+
+mainbox {
+padding: 20px;
+}
+
+inputbar {
+margin: 0px 0px 0.5em 0em;
+spacing: 0.4em;
+children: [ button-iggy1, entry];
+}
+entry {
+placeholder:                 "Search...";
+                             placeholder-color:           @accent2;
+}
+button-iggy1 {
+expand: false;
+content: "  ";
+action: "kb-primary-paste";
+        horizontal-align: 0.5;
+}
+
+listview {
+columns:                     1;
+lines:                  8;
+cycle:                       true;
+layout:                      vertical;
+dynamic:                     true;
+                             fixed-height:                true;
+                             fixed-columns:               true;
+spacing: 0px;
+padding:                     0px;
+border:                      0px solid;
+margin:                      0px;
+                             background-color:            @bg;
+}
+listview {
+
+}
+element {
+padding: 5px;
+         border-radius: @rnd-rd;
+}
+
+element-icon {
+        background-color:            @bg;
+        background-color:            transparent;
+        text-color:                  @fg;
+size:                        16px;
+}
+element-text {
+margin: 0px 0px 0em 0.5em;
+        background-color:            transparent;
+        text-color:                  @fg;
+highlight:                   inherit;
+                             vertical-align:              0.5;
+                             horizontal-align:            0.0;
+}
+element normal.normal {
+        background-color:            @bg;
+        text-color:                  @fg;
+}
+element selected.normal {
+        background-color:            @accent;
+        text-color:                  @fg;
+}

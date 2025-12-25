@@ -8,8 +8,8 @@ font pango:0xProto Nerd Font 8
 # ==== start services ====
 
 exec_always --no-startup-id $wm_setting_app_compositor
-exec --no-startup-id dunst
-exec --no-startup-id picom --backend xrender -b
+exec_always --no-startup-id dunst
+exec_always --no-startup-id picom --backend xrender -b
 exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -135,7 +135,8 @@ gaps inner 10
 # ==== appearance ====
 
 # wallpaper feh
-exec --no-startup-id feh --bg-fill ~/Wallpapers/anime-girl-1.png
+# exec --no-startup-id feh --bg-fill ~/wallpapers/anime-girl-1.png
+exec --no-startup-id feh --bg-fill ~/wallpapers/tamago-1.jpg
 
 # color variables
 set $text #ffffff

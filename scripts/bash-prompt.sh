@@ -1,42 +1,38 @@
 #!/usr/bin/env bash
 
-# -------------------------
-# Colors (ANSI)
-# -------------------------
+# ==== colours ====
 RESET="\[\e[0m\]"
 
-# Directory box
+# dir
 DIR="\[\e[37;40m\]"
 END_DIR="\[\e[30m\]"
 
-# Git branch box
+# git branch
 GIT="\[\e[34;40m\]"
 END_GIT="\[\e[30m\]"
 
-# Python virtualenv box
-PY_ENV="\[\e[30;42m\]"    # black on green
+# python env
+PY_ENV="\[\e[30;42m\]"
 END_PY="\[\e[30m\]"
 
 # Success/error symbols
-SYMBOL_OK="󰆧"
+SYMBOL_OK=""
 SYMBOL_ERR="󰯈"
 
-# -------------------------
-# Helper functions
-# -------------------------
+# ==== helpers ====
 
 short_pwd() {
-        local pwd="${PWD/#$HOME/~}"
+        local pwd="${PWD/#$HOME/\~}"
         IFS='/' read -ra parts <<< "$pwd"
 
         local out=""
-        local last_index=$((${#parts[@]} - 1))
+        local last_i=$((${#parts[@]} - 1))
 
                 for i in "${!parts[@]}"; do
-                        if (( i == 0 || i == last_index )); then
+                        if (( i == 0 || i == last_i )); then
                                 out+="/${parts[i]}"
                         else
-                                out+="/${parts[i]:0:3}"
+                                out+="/${parts[i]:0:2}"
                         fi
                 done
 
@@ -61,36 +57,34 @@ battery_status() {
         fi
 }
 
-# -------------------------
-# Main prompt builder
-# -------------------------
+# ==== prompt build ====
+
 custom_prompt() {
         local exit_code=$?
         local symbol="${SYMBOL_OK}"
         [[ $exit_code -ne 0 ]] && symbol="${SYMBOL_ERR}"
 
-        # Directory box
+        # dir
         local dir_box="${END_DIR}${DIR}$(short_pwd)${RESET}${END_DIR}${RESET}"
 
-        # Git box
+        # git
         local git=$(git_branch)
         local git_box=""
         if [[ -n "$git" ]]; then
-                # append symbols after branch name
                 git_box=" ${END_GIT}${GIT} $git"
                 git_box+="${RESET}${END_GIT}${RESET}"
         fi
 
-        # Python virtualenv box
+        # python env
         local py=$(python_venv)
         local py_box=""
         [[ -n "$py" ]] && py_box=" ${END_PY}${PY_ENV}  $py ${RESET}${END_PY}${RESET}"
 
-        # Assemble final PS1
+        # assembly
         PS1="\n${dir_box}${git_box}${py_box}${rust_box} ${symbol} "
 }
 
-# -------------------------
-# Export PS1 via PROMPT_COMMAND
-# -------------------------
+# ==== export PS1
+
 PROMPT_COMMAND=custom_prompt
+

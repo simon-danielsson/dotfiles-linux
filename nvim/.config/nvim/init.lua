@@ -13,10 +13,11 @@ require('options')
 require('keymaps')
 require('config.lazy')
 require('lazy').setup('plugins')
-require('plugin-keymaps')
 require('autocmds')
 require('indenting')
 require('oldfiles')
+require('buffers')
+require('diagnostics')
 require("pairs").setup()
 
 -- colors, theme and statusline

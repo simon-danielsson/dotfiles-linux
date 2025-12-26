@@ -29,6 +29,13 @@ foreground = "#ffffff"
 [mouse]
 hide_when_typing = true
 
+[cursor]
+blink_interval = 450
+
+[cursor.style]
+shape = "Block"
+blinking = "Always"
+
 [window]
 padding = { x = 10, y = 5 }
 dynamic_padding = true

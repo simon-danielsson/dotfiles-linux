@@ -2,37 +2,43 @@
 
 devicon_list="
  bash
- python
  html
  c
- windows
  javascript
- linux
  rust
  config
+
  git
  github
+ gitadd
+ gitbranch
+ gitdiff
+ gitignore
+ gitmodify
+ gitdelete
+ gitrename
+ gitrepo
+󰘬 gitunmerged
+󰞋 gituntracked
+ gitunstaged
+ gitstaged
+ gitconflict
+
+ apple
+ linux
  voidlinux
 󰣇 archlinux
- apple
  macos
+ windows
 
  folder
  folder-open
  file
  file-text
  file-doc
- file-pdf
- file-markdown
- file-zip
  file-image
  file-audio
  file-video
- file-code
- windows
- linux
- apple
- android
  disk
  rss
  cloud
@@ -46,16 +52,12 @@ devicon_list="
  clipboard
  flask
  firefox
- chrome
+ steam
  android
- apple
  python
  java
  ruby
  rust
- elixir
- c
- c++
  go
  html
  javascript

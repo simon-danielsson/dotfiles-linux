@@ -11,6 +11,16 @@ END_DIR="\[\e[30m\]"
 GIT="\[\e[34;40m\]"
 END_GIT="\[\e[30m\]"
 
+GIT_ADD="\[\e[32;40m\]"
+GIT_MOD="\[\e[33;40m\]"
+GIT_DEL="\[\e[31;40m\]"
+END_GIT_STATUS="\[\e[30m\]"
+
+# git symbols
+GIT_ADD_SYM=" "
+GIT_MOD_SYM=" "
+GIT_DEL_SYM=" "
+
 # python env
 PY_ENV="\[\e[30;42m\]"
 END_PY="\[\e[30m\]"
@@ -43,6 +53,30 @@ git_branch() {
         git rev-parse --abbrev-ref HEAD 2>/dev/null
 }
 
+git_status_counts() {
+        # Exit if not in git repo
+        git rev-parse --is-inside-work-tree &>/dev/null || return
+
+        local status
+        status=$(git status --porcelain 2>/dev/null)
+
+        [[ -z "$status" ]] && return
+
+        local added modified deleted
+
+        added=$(echo "$status" | grep -E '^(A|M ).' | wc -l)
+        modified=$(echo "$status" | grep -E '^( M|MM|AM| T)' | wc -l)
+        deleted=$(echo "$status" | grep -E '^( D|D )' | wc -l)
+
+        local out=""
+
+        (( added > 0 ))    && out+=" ${GIT_ADD}${GIT_ADD_SYM}${added}${END_GIT_STATUS}"
+        (( modified > 0 )) && out+=" ${GIT_MOD}${GIT_MOD_SYM}${modified}${END_GIT_STATUS}"
+        (( deleted > 0 ))  && out+=" ${GIT_DEL}${GIT_DEL_SYM}${deleted}${END_GIT_STATUS}"
+
+        echo "$out"
+}
+
 python_venv() {
         if [[ -n "$VIRTUAL_ENV" ]]; then
                 echo "$(basename "$VIRTUAL_ENV")"
@@ -68,11 +102,14 @@ custom_prompt() {
         local dir_box="${END_DIR}${DIR}$(short_pwd)${RESET}${END_DIR}${RESET}"
 
         # git
+        # git
         local git=$(git_branch)
         local git_box=""
         if [[ -n "$git" ]]; then
-                git_box=" ${END_GIT}${GIT} $git"
-                git_box+="${RESET}${END_GIT}${RESET}"
+                local git_status
+                git_status=$(git_status_counts)
+
+                git_box=" ${END_GIT}${GIT} $git${git_status} ${RESET}${END_GIT}${RESET}"
         fi
 
         # python env

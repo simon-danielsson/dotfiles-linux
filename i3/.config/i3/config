@@ -135,8 +135,9 @@ gaps inner 10
 # ==== appearance ====
 
 # wallpaper feh
+exec --no-startup-id feh --bg-fill ~/wallpapers/chill-anime-1.png
 # exec --no-startup-id feh --bg-fill ~/wallpapers/anime-girl-1.png
-exec --no-startup-id feh --bg-fill ~/wallpapers/tamago-1.jpg
+# exec --no-startup-id feh --bg-fill ~/wallpapers/tamago-1.jpg
 
 # color variables
 set $text #ffffff

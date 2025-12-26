@@ -18,10 +18,10 @@ stdbuf -oL i3-msg -m -t subscribe '[ "window" ]' |
     ')
 
     case "$APP" in
-            Firefox)    LABEL=\ 󰈹\ Firefox;;
+            Firefox)    LABEL=\ 󰖟\ Browser;;
             Alacritty)  LABEL=\ \ Terminal;;
             Pcmanfm)     LABEL=\ \ Files;;
-            qutebrowser)     LABEL=\ \ Qute;;
+            qutebrowser)     LABEL=\ 󰖟\ Browser;;
             vlc)     LABEL=\ 󰕼\ Media;;
             Gimp)     LABEL=\ \ GIMP;;
             REAPER)     LABEL=\ \ REAPER;;

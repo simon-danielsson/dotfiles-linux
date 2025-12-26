@@ -3,7 +3,7 @@
 general {
         output_format = "i3bar"
                 colors = true
-                interval = 1
+                interval = 10
 }
 
 order += "cpu_usage"
@@ -40,5 +40,5 @@ volume master {
 }
 
 time {
-        format = " %d-%m-%Y  %H:%M:%S "
+        format = " %d-%m-%Y  %H:%M "
 }

@@ -9,5 +9,7 @@ settings:
   content.javascript.clipboard:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
+  fileselect.handler:
+    global: default
   window.transparent:
     global: true

@@ -67,6 +67,27 @@ map("n", "-", function()
         vim.cmd("wincmd w")
 end, { desc = "Cycle through splits" })
 
+map("n", "_", function()
+        local bufs = vim.api.nvim_list_bufs()
+        local open_bufs = {}
+        for _, bufnr in ipairs(bufs) do
+                if vim.api.nvim_buf_is_loaded(bufnr) and vim.api.nvim_buf_get_option(bufnr, "buflisted") then
+                        table.insert(open_bufs, bufnr)
+                end
+        end
+        if #open_bufs == 0 then return end
+        local current = vim.api.nvim_get_current_buf()
+        local idx = nil
+        for i, bufnr in ipairs(open_bufs) do
+                if bufnr == current then
+                        idx = i
+                        break
+                end
+        end
+        local next_idx = (idx % #open_bufs) + 1
+        vim.api.nvim_set_current_buf(open_bufs[next_idx])
+end, { desc = "Cycle through open buffers" })
+
 map('t', '<Esc><Esc>', '<C-\\><C-n>',
         { desc = 'Exit terminal mode' })
 

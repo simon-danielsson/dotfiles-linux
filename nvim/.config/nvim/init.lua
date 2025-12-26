@@ -18,6 +18,8 @@ require('indenting')
 require('oldfiles')
 require('buffers')
 require('diagnostics')
+require('cmp')
+-- require('hoverwindoc').setup()
 require("pairs").setup()
 
 -- colors, theme and statusline

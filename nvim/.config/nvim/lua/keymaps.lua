@@ -1,11 +1,11 @@
 local map = vim.keymap.set
 
--- leader
+-- ==== leader ====
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- hjkl remappings
+-- ==== hjkl remappings ====
 
 map("n", "i", "<Nop>")
 map("n", "I", "<Nop>")
@@ -13,36 +13,36 @@ map("n", "o", "<Nop>")
 map("n", "O", "<Nop>")
 
 map({ "n", "v" }, "n", "h",
-{ desc = "Move left" })
+        { desc = "Move left" })
 
 map({ "n", "v" }, "i", "l",
-{ desc = "Move right" })
+        { desc = "Move right" })
 
 map({ 'n', 'v' }, 'o', "v:count == 0 ? 'gk' : 'k'",
-{
-        expr = true,
-        silent = true,
-        desc = "Move up (through wrapped lines)"
-})
+        {
+                expr = true,
+                silent = true,
+                desc = "Move up (through wrapped lines)"
+        })
 
 map({ 'n', 'v' }, 'e', "v:count == 0 ? 'gj' : 'j'",
-{
-        expr = true,
-        silent = true,
-        desc = "Move down (through wrapped lines)"
-})
+        {
+                expr = true,
+                silent = true,
+                desc = "Move down (through wrapped lines)"
+        })
 
 map("n", ">", "nzzzv",
-{ desc = "Next search result (centered)" })
+        { desc = "Next search result (centered)" })
 
 map("n", "<", "Nzzzv",
-{ desc = "Previous search result (centered)" })
+        { desc = "Previous search result (centered)" })
 
 map("n", "}", "}zz",
-{ desc = "Next empty line (centered)" })
+        { desc = "Next empty line (centered)" })
 
 map("n", "{", "{zz",
-{ desc = "Previous empty line (centered)" })
+        { desc = "Previous empty line (centered)" })
 
 map("n", "<C-e>", function()
         vim.diagnostic.goto_prev()
@@ -57,28 +57,31 @@ end, { desc = "Go to next diagnostic" })
 -- general nav
 
 map("n", "<leader>f", "<cmd>Ex<CR>",
-{ desc = "Launch netrw", noremap = true,
-silent = true })
+        {
+                desc = "Launch netrw",
+                noremap = true,
+                silent = true
+        })
 
 map("n", "-", function()
         vim.cmd("wincmd w")
 end, { desc = "Cycle through splits" })
 
 map('t', '<Esc><Esc>', '<C-\\><C-n>',
-{ desc = 'Exit terminal mode' })
+        { desc = 'Exit terminal mode' })
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>",
-{ desc = "Clear search highlights" })
+        { desc = "Clear search highlights" })
 
 -- folds
 map('n', 'za', 'za',
-{ desc = "Toggle fold under cursor" })
+        { desc = "Toggle fold under cursor" })
 
 map('n', 'zo', 'zR',
-{ desc = "Open all folds" })
+        { desc = "Open all folds" })
 
 map('n', 'zc', 'zM',
-{ desc = "Close all folds" })
+        { desc = "Close all folds" })
 
 -- New insert mode bindings
 map("n", "<leader>i", "i", { desc = "Insert before cursor" })
@@ -100,26 +103,26 @@ map("n", "-", function()
 end, { desc = "Cycle through splits" })
 
 map('n', '<Left>', '<cmd>vertical resize +4<cr>',
-{ desc = 'Increase Window Width' })
+        { desc = 'Increase Window Width' })
 
 map('n', '<Right>', '<cmd>vertical resize -4<cr>',
-{ desc = 'Decrease Window Width' })
+        { desc = 'Decrease Window Width' })
 map('n', 'x', '"_x',
-{ desc = "Delete single character without yanking to register" })
+        { desc = "Delete single character without yanking to register" })
 
 map("n", "<leader><CR>", "i<CR><Esc>",
-{ desc = "Insert newline at cursor in normal mode" })
+        { desc = "Insert newline at cursor in normal mode" })
 
 map("n", "<leader><BS>", "i<BS><Esc>",
-{ desc = "Insert backspace at cursor in normal mode" })
+        { desc = "Insert backspace at cursor in normal mode" })
 
 map("n", "<leader><leader>", "i<Space><Esc>",
-{ desc = "Insert space at cursor in normal mode" })
+        { desc = "Insert space at cursor in normal mode" })
 
 -- editing
 
 map("n", "<leader>,", [[:%s/<C-r><C-w>//gI<Left><Left><Left>]],
-{ desc = "open %s//gI with cword" })
+        { desc = "open %s//gI with cword" })
 -- Move selected lines up/down in visual mode using Shift and navigation keys
 map("v", "<S-e>", ":m '>+2<CR>gv=gv", { desc = "Move selection down" })
 map("v", "<S-o>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })

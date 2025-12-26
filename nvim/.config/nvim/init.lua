@@ -4,7 +4,7 @@ vim.notify = function(msg, log_level, opts)
         if msg:match("supported") then
                 return
         end
-        vim.api.nvim_echo({{msg}}, false, {})
+        vim.api.nvim_echo({ { msg } }, false, {})
 end
 
 -- load modules
@@ -16,6 +16,8 @@ require('lazy').setup('plugins')
 require('plugin-keymaps')
 require('autocmds')
 require('indenting')
+require('oldfiles')
+require("pairs").setup()
 
 -- colors, theme and statusline
 

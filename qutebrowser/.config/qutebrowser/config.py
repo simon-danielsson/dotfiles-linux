@@ -3,12 +3,22 @@
 
 config.load_autoconfig()
 c.auto_save.session = True
+c.scrolling.smooth = True
+c.hints.auto_follow = 'unique-match'
+c.downloads.location.directory = '~/Downloads'
 
+c.editor.command = [
+    'alacritty', '-e', 'nvim', '{file}'
+]
 # ==== privacy ====
 
 c.content.autoplay = False
+c.content.canvas_reading = False
 c.content.geolocation = False
 c.content.notifications.enabled = False
+c.content.headers.referer = 'same-domain'
+c.content.https_only = True
+c.downloads.prevent_mixed_content = True
 
 # ==== color settings ====
 
@@ -53,6 +63,8 @@ c.fonts.web.family.standard = 'monospace'
 
 # ==== keybinds ====
 
+# insert mode
+config.bind(" i", "mode-enter insert", mode="normal")
 # tabs
 config.bind("n", "tab-prev")
 config.bind("i", "tab-next")

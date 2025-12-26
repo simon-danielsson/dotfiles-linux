@@ -23,7 +23,7 @@ family = "0xProto Nerd Font"
 style = "Regular"
 
 [colors.primary]
-background = "#1a1a1a" # transparent background
+background = "#1a1a1a"
 foreground = "#ffffff"
 
 [mouse]

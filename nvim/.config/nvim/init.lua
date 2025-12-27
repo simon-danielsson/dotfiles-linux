@@ -20,6 +20,7 @@ require('general.cmp')
 require('special.oldfiles')
 require('special.buffers')
 require('special.diagnostics')
+require('special.notify')
 require("special.pairs").setup()
 -- require('special.hoverwindoc').setup()
 
@@ -27,3 +28,5 @@ require("special.pairs").setup()
 
 require('plugins.lsp')
 require('plugins.flash')
+require('plugins.render-markdown')
+require('plugins.treesitter')

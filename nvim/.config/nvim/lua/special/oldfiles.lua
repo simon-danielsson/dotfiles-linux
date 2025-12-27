@@ -19,13 +19,13 @@ local function open_old_file()
         end
 
         -- Ask user: press Enter for menu, or type a substring
-        local input = vim.fn.input("Recent files search (Enter/Esc: menu): ")
+        local input = vim.fn.input("Old files (Esc/Ret=Menu): ")
         input = vim.trim(input)
 
         if input == "" then
                 -- Show menu
                 vim.ui.select(oldfiles, {
-                        prompt = "Select old file:",
+                        prompt = "Select old file: ",
                         format_item = function(item)
                                 return shorten_path(item, 3)
                         end

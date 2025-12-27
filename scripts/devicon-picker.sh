@@ -24,6 +24,8 @@ devicon_list="
  gitstaged
  gitconflict
 
+ rightarrow
+
  apple
  linux
  voidlinux

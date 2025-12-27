@@ -26,7 +26,7 @@ PY_ENV="\[\e[30;42m\]"
 END_PY="\[\e[30m\]"
 
 # Success/error symbols
-SYMBOL_OK=""
+SYMBOL_OK=""
 SYMBOL_ERR="󰯈"
 
 # ==== helpers ====
@@ -102,14 +102,14 @@ custom_prompt() {
         local dir_box="${END_DIR}${DIR}$(short_pwd)${RESET}${END_DIR}${RESET}"
 
         # git
-        # git
         local git=$(git_branch)
         local git_box=""
         if [[ -n "$git" ]]; then
+                local dir_box="${END_DIR}${DIR}$(short_pwd)"
                 local git_status
                 git_status=$(git_status_counts)
 
-                git_box=" ${END_GIT}${GIT} $git${git_status} ${RESET}${END_GIT}${RESET}"
+                git_box=" │ ${GIT} $git${git_status} ${RESET}${END_GIT}${RESET}"
         fi
 
         # python env

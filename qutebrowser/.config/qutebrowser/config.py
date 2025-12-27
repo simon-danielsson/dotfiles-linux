@@ -17,7 +17,6 @@ c.content.canvas_reading = False
 c.content.geolocation = False
 c.content.notifications.enabled = False
 c.content.headers.referer = 'same-domain'
-c.content.https_only = True
 c.downloads.prevent_mixed_content = True
 
 # ==== color settings ====

@@ -8,7 +8,6 @@ vim.notify = function(msg, log_level, opts)
 end
 
 -- load modules
-
 require('options')
 require('keymaps')
 require('config.lazy')
@@ -18,7 +17,6 @@ require('indenting')
 require('oldfiles')
 require('buffers')
 require('diagnostics')
-require('cmp')
 -- require('hoverwindoc').setup()
 require("pairs").setup()
 

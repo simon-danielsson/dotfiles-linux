@@ -1,4 +1,4 @@
--- ==== imports: ui ====
+-- ==== interface ====
 
 require('ui.colorscheme')
 require('ui.theme')
@@ -7,7 +7,7 @@ local colors = require("ui.colorscheme")
 colors.colorscheme(2)
 require('ui.statusline')
 
--- ==== imports: general ====
+-- ==== general ====
 
 require('general.options')
 require('general.keymaps')
@@ -15,7 +15,7 @@ require('general.autocmds')
 require('general.indenting')
 require('general.cmp')
 
--- ==== imports: special ====
+-- ==== special ====
 
 require('special.oldfiles')
 require('special.buffers')
@@ -24,7 +24,7 @@ require('special.notify')
 require("special.pairs").setup()
 require('special.hoverwindoc').setup()
 
--- ==== imports: plugins ====
+-- ==== plugins ====
 
 require('plugins.lsp')
 require('plugins.flash')

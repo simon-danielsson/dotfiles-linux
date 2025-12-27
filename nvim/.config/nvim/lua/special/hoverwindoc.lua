@@ -61,7 +61,7 @@ local function update_hover()
                 vim.api.nvim_buf_set_option(hover_buf, "filetype", vim.bo.filetype)
 
                 local row = vim.o.lines - height - 4
-                local col = vim.o.columns - width - 3
+                local col = vim.o.columns - width - 5
 
                 if hover_win and vim.api.nvim_win_is_valid(hover_win) then
                         vim.api.nvim_win_set_buf(hover_win, hover_buf)

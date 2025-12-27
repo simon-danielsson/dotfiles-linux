@@ -1,15 +1,9 @@
 local icons = require("ui.icons")
 local colors = require("ui.colorscheme").colors
 
--- ======================================================
--- Set Colorscheme
--- ======================================================
-
 vim.g.border = icons.border
 
--- ======================================================
--- Diagnostics
--- ======================================================
+-- ==== diagnostics ====
 
 local diag_icons = {
         [vim.diagnostic.severity.ERROR] = icons.diagn.error,
@@ -34,9 +28,7 @@ for name, icon in pairs({
         vim.fn.sign_define(name, { text = icon, texthl = name })
 end
 
--- ======================================================
--- Color Overrides
--- ======================================================
+-- ==== color overrides ====
 
 -- Helper function for setting highlights
 local function set_hl(group, opts)

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-  printf("Template!");
-  return 0;
+        printf("Hello world!");
+        return 0;
 }

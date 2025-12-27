@@ -4,9 +4,7 @@ local aux_colors = require("ui.colorscheme").aux_colors
 
 local autocmd = vim.api.nvim_create_autocmd
 
--- ======================================================
--- Git
--- ======================================================
+-- ==== git ====
 
 local git_cache = { status = "", last_update = 0 }
 local max_repo_name_length = 15
@@ -66,9 +64,7 @@ local function git_info()
         return git_cache.status
 end
 
--- ======================================================
--- Utilities
--- ======================================================
+-- ==== utilities ====
 
 local function python_venv()
         local ft = vim.bo.filetype
@@ -134,9 +130,7 @@ local function lsp_info()
         return ""
 end
 
--- ======================================================
--- Filetype & Filename
--- ======================================================
+-- ==== file ====
 
 for ft, entry in pairs(icons.lang) do
         vim.api.nvim_set_hl(0, "FileIcon_" .. ft, { fg = entry.color, bg = colors.bg_deep2 })
@@ -170,9 +164,7 @@ local function file_type_filename()
         return hl .. " " .. short_filepath() .. " " .. "%*"
 end
 
--- ======================================================
--- Diagnostics
--- ======================================================
+-- ==== diagnostics ====
 
 local diagnostics_levels = {
         { name = "Error", icon = icons.diagn.error,       severity = vim.diagnostic.severity.ERROR },
@@ -202,9 +194,8 @@ for _, level in ipairs(diagnostics_levels) do
                 bold = true,
         })
 end
--- ======================================================
--- Scrollbar
--- ======================================================
+
+-- ==== scrollbar ====
 
 local SBAR = { "󱃓 ", "󰪞 ", "󰪟 ", "󰪠 ", "󰪡 ", "󰪢 ", "󰪣 ", "󰪤 ", "󰪥 " }
 
@@ -217,9 +208,7 @@ local function scrollbar()
         return "%#StatusScrollbar#" .. SBAR[idx]:rep(1) .. "%*"
 end
 
--- ======================================================
--- Highlights
--- ======================================================
+-- ==== highlights ====
 
 local statusline_highlights = {
         StatusLine       = { fg = colors.fg_main, bg = "none", bold = false },
@@ -239,9 +228,7 @@ for group, opts in pairs(statusline_highlights) do
         vim.api.nvim_set_hl(0, group, opts)
 end
 
--- ======================================================
--- Statusline Assembly
--- ======================================================
+-- ==== assembly ====
 
 _G.Statusline = function()
         local parts = {

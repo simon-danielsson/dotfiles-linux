@@ -11,6 +11,7 @@ require("nvim-treesitter.configs").setup({
         ensure_installed = {
                 "lua",
                 "python",
+                "toml",
                 "javascript",
                 "html",
                 "json",

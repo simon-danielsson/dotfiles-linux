@@ -3,8 +3,8 @@
 require('ui.colorscheme')
 require('ui.theme')
 local colors = require("ui.colorscheme")
-colors.colorscheme(2) -- 1: lo cont 2: hi cont
-colors.background_transparency(true)
+-- 1: retrobox (opaque) 2: wildcharm (trans.)
+colors.colorscheme(2)
 require('ui.statusline')
 
 -- ==== imports: general ====
@@ -23,6 +23,7 @@ require('special.diagnostics')
 require('special.notify')
 require("special.pairs").setup()
 require('special.hoverwindoc').setup()
+
 -- ==== imports: plugins ====
 
 require('plugins.lsp')

@@ -27,11 +27,13 @@ function M.colorscheme(option)
                 vim.o.background = "dark"
                 vim.cmd.colorscheme("wildcharm")
                 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1a1a1a" })
+                M.background_transparency(true)
                 return true
         else
                 if option == 1 then
                         vim.o.background = "dark"
-                        vim.cmd.colorscheme("habamax")
+                        vim.cmd.colorscheme("retrobox")
+                        vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1a1a1a" })
                         M.background_transparency(false)
                         return false
                 end

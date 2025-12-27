@@ -1,11 +1,11 @@
--- ==== ignore errors ====
+-- ==== imports: ui ====
 
-vim.notify = function(msg, log_level, opts)
-        if msg:match("supported") then
-                return
-        end
-        vim.api.nvim_echo({ { msg } }, false, {})
-end
+require('ui.colorscheme')
+require('ui.theme')
+local colors = require("ui.colorscheme")
+colors.colorscheme(2) -- 1: lo cont 2: hi cont
+colors.background_transparency(true)
+require('ui.statusline')
 
 -- ==== imports: general ====
 
@@ -21,18 +21,9 @@ require('special.oldfiles')
 require('special.buffers')
 require('special.diagnostics')
 require("special.pairs").setup()
+-- require('special.hoverwindoc').setup()
 
--- ==== imports: third-party ====
+-- ==== imports: plugins ====
 
-require('config.lazy')
-require('lazy').setup('plugins')
-
--- ==== imports: ui ====
-
-require('ui.hoverwindoc').setup()
-require('ui.colorscheme')
-require('ui.theme')
-local colors = require("ui.colorscheme")
-colors.colorscheme(2) -- 1: lo cont 2: hi cont
-colors.background_transparency(true)
-require('ui.statusline')
+require('plugins.lsp')
+require('plugins.flash')

@@ -1,5 +1,9 @@
 local map = vim.keymap.set
 
+-- ==== plugin reservations ====
+
+map("n", "s", "<Nop>")
+
 -- ==== leader ====
 
 vim.g.mapleader = ' '

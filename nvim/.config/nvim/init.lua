@@ -22,8 +22,7 @@ require('special.buffers')
 require('special.diagnostics')
 require('special.notify')
 require("special.pairs").setup()
--- require('special.hoverwindoc').setup()
-
+require('special.hoverwindoc').setup()
 -- ==== imports: plugins ====
 
 require('plugins.lsp')

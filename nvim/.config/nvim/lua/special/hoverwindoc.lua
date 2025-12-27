@@ -25,24 +25,44 @@ local function update_hover()
                         end
                         return
                 end
+
                 local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
                 markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
+
+                -- Remove long separators, empty lines, and markdown code block lines
+                local filtered_lines = {}
+                for _, line in ipairs(markdown_lines) do
+                        if not ((line:match("^[%_─]+$") and #line > 4) -- long separator
+                                    or line:match("^%s*$") -- empty line
+                                    or line:match("```") -- markdown code block
+                                    or line:match("%-%-%-")) then
+                                table.insert(filtered_lines, line)
+                        end
+                end
+                markdown_lines = filtered_lines
+
                 if vim.tbl_isempty(markdown_lines) then return end
+
                 local width = 0
                 for _, line in ipairs(markdown_lines) do
                         width = math.max(width, #line)
                 end
                 width = math.min(width, max_width)
                 local height = math.max(1, math.min(#markdown_lines - 2, max_height))
+
                 if not hover_buf or not vim.api.nvim_buf_is_valid(hover_buf) then
                         hover_buf = vim.api.nvim_create_buf(false, true)
                 else
                         vim.api.nvim_buf_set_lines(hover_buf, 0, -1, false, {})
                 end
+
+                -- Set the cleaned lines directly
                 vim.api.nvim_buf_set_lines(hover_buf, 0, -1, false, markdown_lines)
                 vim.api.nvim_buf_set_option(hover_buf, "filetype", vim.bo.filetype)
+
                 local row = vim.o.lines - height - 4
                 local col = vim.o.columns - width - 3
+
                 if hover_win and vim.api.nvim_win_is_valid(hover_win) then
                         vim.api.nvim_win_set_buf(hover_win, hover_buf)
                         vim.api.nvim_win_set_config(hover_win, {
@@ -67,7 +87,6 @@ local function update_hover()
                                 focusable = false,
                         })
                 end
-                vim.lsp.util.stylize_markdown(hover_buf, markdown_lines, { popup = true })
         end, 0)
 end
 

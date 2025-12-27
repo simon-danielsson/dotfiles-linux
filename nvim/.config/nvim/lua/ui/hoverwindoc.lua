@@ -1,4 +1,4 @@
-local icons = require("icons")
+local icons = require("ui.icons")
 local M = {}
 
 local max_width = 60

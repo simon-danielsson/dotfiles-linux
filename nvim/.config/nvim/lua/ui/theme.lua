@@ -1,5 +1,5 @@
-local icons = require("icons")
-local colors = require("colorscheme").colors
+local icons = require("ui.icons")
+local colors = require("ui.colorscheme").colors
 
 -- ======================================================
 -- Set Colorscheme
@@ -109,13 +109,13 @@ local override_groups = {
 vim.api.nvim_create_autocmd("VimEnter", {
         callback = function()
                 local override_groups = {
-                        TelescopePromptCounter  = { bg = "none" },
-                        TelescopeBorder         = { fg = colors.fg_mid, bg = "none" },
-                        TelescopeNormal         = { fg = "none", bg = "none" },
-                        Pmenu     = { bg = "none", fg = colors.fg_mid },
-                        PmenuSel  = { bg = colors.bg_mid, fg = colors.fg_main },
-                        PmenuSbar = { bg = colors.bg_deep },
-                        PmenuThumb= { bg = colors.bg_mid },
+                        TelescopePromptCounter = { bg = "none" },
+                        TelescopeBorder        = { fg = colors.fg_mid, bg = "none" },
+                        TelescopeNormal        = { fg = "none", bg = "none" },
+                        Pmenu                  = { bg = "none", fg = colors.fg_mid },
+                        PmenuSel               = { bg = colors.bg_mid, fg = colors.fg_main },
+                        PmenuSbar              = { bg = colors.bg_deep },
+                        PmenuThumb             = { bg = colors.bg_mid },
                 }
                 for group, opts in pairs(override_groups) do
                         vim.api.nvim_set_hl(0, group, opts)

@@ -24,6 +24,7 @@ stdbuf -oL i3-msg -m -t subscribe '[ "window" ]' |
             qutebrowser)     LABEL=\ 󰖟\ Browser;;
             vlc)     LABEL=\ 󰕼\ Media;;
             Gimp)     LABEL=\ \ GIMP;;
+            Transmission)     LABEL=\ \ Torrents;;
             REAPER)     LABEL=\ \ REAPER;;
             OBS)     LABEL=\ 󰄀\ OBS;;
             *) continue ;;

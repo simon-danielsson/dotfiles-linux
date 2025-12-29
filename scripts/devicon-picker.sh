@@ -37,6 +37,9 @@ devicon_list="
  folder-open
  file
  file-text
+ download
+ openhand
+ rocket
  file-doc
  file-image
  file-audio

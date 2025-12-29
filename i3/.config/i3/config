@@ -7,6 +7,8 @@ font pango:0xProto Nerd Font 8
 
 # ==== start services ====
 
+for_window [title="kast"] floating enable
+
 exec_always --no-startup-id $wm_setting_app_compositor
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom --backend xrender -b
@@ -37,13 +39,16 @@ bindsym $mod+a exec alacritty
 bindsym $mod+b exec pcmanfm &
 
 # screenshot
-bindsym $mod+Shift+4 exec scrot -s ~/Screenshots/%Y-%m-%d_%T.png
+bindsym $mod+Shift+4 exec scrot ~/Screenshots/%Y-%m-%d_%T.png
 
 # kill focused window
 bindsym $mod+q kill
 
-# start rofi
-bindsym $mod+space exec --no-startup-id rofi -show drun
+# rofi app launcher
+bindsym $mod+shift+space exec --no-startup-id rofi -show drun
+
+# kast app launcher
+bindsym $mod+space exec kast
 
 # change focused window within workspace
 bindsym $mod+Left focus left
@@ -107,7 +112,6 @@ mode "resize" {
 exec_always --no-startup-id /bin/sh /home/simon/.config/i3/ws.sh
 
 set $ws1 "1"
-exec --no-startup-id sh -c 'i3-msg "workspace $ws1; exec alacritty"'
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"

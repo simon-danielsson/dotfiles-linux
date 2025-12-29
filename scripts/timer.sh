@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Usage: timer.sh <seconds>
 
-if [ -z "$1" ] || ! [[ "$1" =~ ^[0-9]+$ ]]; then
-        echo "Usage: $0 <seconds>"
-        exit 1
-fi
+# if [ -z "$1" ] || ![[ "$1" =~ ^[0-9]+$ ]]; then
+#         echo "Usage: $1 <seconds>"
+#         exit 1
+# fi
 
 (
         total="$1"
@@ -32,4 +32,4 @@ fi
                         2>/dev/null
 
                 paplay "$HOME/dotfiles/sounds/dunst-1.wav" 2>/dev/null
-                ) & disown
+                ) &

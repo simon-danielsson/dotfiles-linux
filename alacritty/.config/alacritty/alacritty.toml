@@ -67,8 +67,8 @@ key = "N"
 mods = "Control"
 action = "CreateNewWindow"
 
-# quit window/instance - Control+W | Control+Q
-[[keyboard.bindings]]
-key = "Q"
-mods = "Control"
-action = "Quit"
+# # quit window/instance - Control+W | Control+Q
+# [[keyboard.bindings]]
+# key = "Q"
+# mods = "Control"
+# action = "Quit"

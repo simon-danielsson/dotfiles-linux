@@ -1,0 +1,93 @@
+[Font]
+# path = "/home/simon/dotfiles/fonts/.local/share/fonts/arial.ttf"
+size = 10.0
+
+[Icons]
+entry = ''
+# defaults to false if omitted
+entry_icon = false
+
+[Colors]
+text = "#ffffff"
+text_aux = "#888888"
+accent = "#333333"
+background = "#1a1a1a"
+
+[Window]
+width = 200
+height = 200
+# corner radius of ui elements
+# (corners of the windows themselves need
+# to be set up seperately using picom)
+elem_cnr_rad = 5
+row_height = 20
+
+[Misc]
+search_hint = "Search..."
+# terminate kast automatically after
+# a set amount of seconds (0 = disabled)
+# if this field is omitted or invalid it
+# will default to 20 seconds
+timeout = 20
+
+# both devicons and emojis are valid
+# for the icon variable
+[[App]]
+name = "Gimp"
+icon = ''
+path = "gimp"
+
+[[App]]
+name = "VLC"
+icon = '󰕼'
+path = "vlc"
+
+[[App]]
+name = "Reaper"
+icon = ''
+path = "/home/simon/opt/REAPER/reaper"
+
+[[App]]
+name = "OBS"
+icon = '󰄀'
+path = "obs"
+
+[[App]]
+name = "Torrents"
+icon = ''
+path = "/home/simon/dotfiles/scripts/launch-transmission-dark.sh"
+
+[[App]]
+name = "Vial"
+icon = ''
+path = "/home/simon/AppImages/Vial-v0.7.5.AppImage"
+
+[[App]]
+name = "Set timer (30 sec)"
+icon = ''
+path = "/home/simon/dotfiles/scripts/timer-30-sec.sh"
+
+[[App]]
+name = "Audio"
+icon = ''
+path = "/home/simon/dotfiles/scripts/launch-pavucontrol-dark.sh"
+
+[[App]]
+name = "Qutebrowser"
+icon = '󰖟'
+path = "qutebrowser"
+
+[[App]]
+name = "Firefox"
+icon = ''
+path = "firefox"
+
+[[App]]
+name = "Alacritty"
+icon = ''
+path = "alacritty"
+
+[[App]]
+name = "Files"
+icon = ''
+path = "pcmanfm"

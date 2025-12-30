@@ -38,6 +38,11 @@ icon = ''
 path = "/home/simon/dotfiles/scripts/get-password.sh"
 
 [[App]]
+name = "Neovim"
+icon = ''
+path = "/home/simon/dotfiles/scripts/start-alac-with-nvim.sh"
+
+[[App]]
 name = "Gimp"
 icon = ''
 path = "gimp"

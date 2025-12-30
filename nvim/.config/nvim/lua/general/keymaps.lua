@@ -62,6 +62,17 @@ end, { desc = "Go to next diagnostic" })
 
 -- general nav
 
+vim.keymap.set(
+        "n",
+        "<leader>g",
+        require("special.grepword").grep_current_and_parent,
+        {
+                desc = "Grep in current + parent directory",
+                noremap = true,
+                silent = true
+        }
+)
+
 map("n", "<leader>f", "<cmd>Ex<CR>",
         {
                 desc = "Launch netrw",

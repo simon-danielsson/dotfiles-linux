@@ -144,6 +144,8 @@ devicon_list="
  exclamation
  alert
  key
+ neovim
+ vim
  gift
  lock
  mail

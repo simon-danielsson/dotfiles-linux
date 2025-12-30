@@ -1,11 +1,12 @@
+# ==== Settings ====
+
 [Font]
 # path = "/home/simon/dotfiles/fonts/.local/share/fonts/arial.ttf"
 size = 10.0
 
 [Icons]
 entry = ''
-# defaults to false if omitted
-entry_icon = true
+entry_icon = false
 
 [Colors]
 text = "#ffffff"
@@ -16,31 +17,24 @@ background = "#1a1a1a"
 [Window]
 width = 200
 height = 200
-# corner radius of ui elements
-# (corners of the windows themselves need
-# to be set up seperately using picom)
 elem_cnr_rad = 5
 row_height = 20
 
 [Misc]
 search_hint = "Search..."
-# terminate kast automatically after
-# a set amount of seconds (0 = disabled)
-# if this field is omitted or invalid it
-# will default to 20 seconds
 timeout = 20
 
-# both devicons and emojis are valid
-# for the icon variable
+# ==== Apps ====
+
 [[App]]
 name = "Password"
 icon = ''
 path = "/home/simon/dotfiles/scripts/get-password.sh"
 
-[[App]]
-name = "Neovim"
-icon = ''
-path = "/home/simon/dotfiles/scripts/start-alac-with-nvim.sh"
+# [[App]]
+# name = "Neovim"
+# icon = ''
+# path = "/home/simon/dotfiles/scripts/start-alac-with-nvim.sh"
 
 [[App]]
 name = "Gimp"

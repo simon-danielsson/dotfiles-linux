@@ -1,6 +1,9 @@
 -- Function to open old files with menu + substring search
 local function open_old_file()
-        local oldfiles = vim.v.oldfiles
+        -- Limit oldfiles to last 20
+        local all_oldfiles = vim.v.oldfiles
+        local oldfiles = vim.list_slice(all_oldfiles, 1, math.min(20, #all_oldfiles))
+
         if #oldfiles == 0 then
                 print("No recent files found")
                 return
@@ -12,7 +15,10 @@ local function open_old_file()
                 local rel = vim.fn.fnamemodify(path, ":.") -- relative to cwd
                 local parts = vim.split(rel, "/", { plain = true })
                 if #parts > n then
-                        return "…/" .. table.concat(vim.list_slice(parts, #parts - n + 1, #parts), "/")
+                        return "…/" .. table.concat(
+                                vim.list_slice(parts, #parts - n + 1, #parts),
+                                "/"
+                        )
                 else
                         return rel
                 end
@@ -38,7 +44,12 @@ local function open_old_file()
                 -- Search by substring (case-insensitive)
                 local match
                 for _, file in ipairs(oldfiles) do
-                        if string.match(string.lower(file), string.lower(input)) then
+                        if string.find(
+                                    string.lower(file),
+                                    string.lower(input),
+                                    1,
+                                    true
+                            ) then
                                 match = file
                                 break
                         end

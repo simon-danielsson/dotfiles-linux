@@ -50,20 +50,35 @@ map("n", "}", "}zz",
 map("n", "{", "{zz",
         { desc = "Previous empty line (centered)" })
 
-map("n", "<C-e>", function()
-        vim.diagnostic.goto_prev()
+local function qf_cycle(direction)
+        local qf = vim.fn.getqflist({ idx = 0, size = 0 })
+        if qf.size == 0 then
+                return
+        end
+
+        local idx = qf.idx + direction
+        if idx < 1 then
+                idx = qf.size
+        elseif idx > qf.size then
+                idx = 1
+        end
+
+        vim.cmd("cc " .. idx)
         vim.cmd("normal! zz")
-end, { desc = "Go to previous diagnostic" })
+end
+
+map("n", "<C-e>", function()
+        qf_cycle(-1)
+end, { desc = "Previous quickfix item (wrap)" })
 
 map("n", "<C-o>", function()
-        vim.diagnostic.goto_next()
-        vim.cmd("normal! zz")
-end, { desc = "Go to next diagnostic" })
+        qf_cycle(1)
+end, { desc = "Next quickfix item (wrap)" })
 
 -- general nav
 
 vim.keymap.set(
-        "n",
+        { "n", "v" },
         "<leader>g",
         require("special.grepword").grep_current_and_parent,
         {

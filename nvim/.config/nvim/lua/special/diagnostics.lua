@@ -49,8 +49,8 @@ end
 vim.api.nvim_create_user_command("DiagnosticsJump", jump_diagnostic, {})
 
 -- Keymap for <leader>d
-vim.keymap.set("n", "<leader>d", jump_diagnostic, {
-        desc = "Jump to diagnostic",
-        noremap = true,
-        silent = true
-})
+-- vim.keymap.set("n", "<leader>d", jump_diagnostic, {
+--         desc = "Jump to diagnostic",
+--         noremap = true,
+--         silent = true
+-- })

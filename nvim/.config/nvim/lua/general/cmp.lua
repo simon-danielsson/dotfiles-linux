@@ -1,18 +1,18 @@
-vim.o.completeopt = "menu,menuone,noselect"
-
-vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(ev)
-                local bufnr = ev.buf
-                local client = vim.lsp.get_client_by_id(ev.data.client_id)
-                if not client then return end
-
-                -- If the server supports textDocument/completion, enable native completion
-                if client:supports_method("textDocument/completion") then
-                        -- Enable native LSP completion with autotrigger
-                        vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-                else
-                        -- Fallback: set omnifunc to LSP omnifunc (works for servers without autotrigger)
-                        vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-                end
-        end,
-})
+-- vim.o.completeopt = "menu,menuone,noselect"
+--
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--         callback = function(ev)
+--                 local bufnr = ev.buf
+--                 local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--                 if not client then return end
+--
+--                 -- If the server supports textDocument/completion, enable native completion
+--                 if client:supports_method("textDocument/completion") then
+--                         -- Enable native LSP completion with autotrigger
+--                         vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+--                 else
+--                         -- Fallback: set omnifunc to LSP omnifunc (works for servers without autotrigger)
+--                         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+--                 end
+--         end,
+-- })

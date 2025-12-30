@@ -31,17 +31,3 @@ if has_mason and has_mason_lsp and has_lspconfig then
                 }
         })
 end
-
-vim.lsp.inline_completion.enable(true)
-
--- vim.keymap.set("i", "<C-ä>", function()
---         local completion = vim.lsp.inline_completion.get()
---         if completion then
---                 return completion
---         end
---         return "<C-ä>"
--- end, {
--- expr = true,
--- replace_keycodes = true,
--- desc = "Accept inline completion",
--- })

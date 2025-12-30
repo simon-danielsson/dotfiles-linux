@@ -13,7 +13,7 @@ require('general.options')
 require('general.keymaps')
 require('general.autocmds')
 require('general.indenting')
-require('general.cmp')
+-- require('general.cmp')
 
 -- ==== special ====
 
@@ -30,3 +30,4 @@ require('plugins.lsp')
 require('plugins.flash')
 require('plugins.render-markdown')
 require('plugins.treesitter')
+require('plugins.cmp')

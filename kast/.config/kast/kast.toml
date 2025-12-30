@@ -3,9 +3,9 @@
 size = 10.0
 
 [Icons]
-entry = ''
+entry = ''
 # defaults to false if omitted
-entry_icon = false
+entry_icon = true
 
 [Colors]
 text = "#ffffff"
@@ -32,6 +32,11 @@ timeout = 20
 
 # both devicons and emojis are valid
 # for the icon variable
+[[App]]
+name = "Password"
+icon = ''
+path = "/home/simon/dotfiles/scripts/get-password.sh"
+
 [[App]]
 name = "Gimp"
 icon = ''

@@ -143,7 +143,8 @@ devicon_list="
  minus
  exclamation
  alert
- key
+ key
+ gift
  lock
  mail
  bookmark

@@ -23,7 +23,7 @@ require('special.buffers')
 require('special.diagn_quickfix')
 require('special.notify')
 require("special.pairs").setup()
-require('special.hoverwindoc').setup()
+-- require('special.hoverwindoc').setup()
 
 -- ==== plugins ====
 

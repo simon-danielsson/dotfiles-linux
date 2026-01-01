@@ -146,6 +146,9 @@ devicon_list="
  key
  neovim
  vim
+ emacs
+󰨙 toggleoff
+󰔡 toggleon
  gift
  lock
  mail

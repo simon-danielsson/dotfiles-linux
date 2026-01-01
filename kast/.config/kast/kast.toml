@@ -27,14 +27,14 @@ timeout = 20
 # ==== Apps ====
 
 [[App]]
-name = "Password"
-icon = ''
-path = "/home/simon/dotfiles/scripts/get-password.sh"
+name = "Alacritty"
+icon = ''
+path = "alacritty"
 
-# [[App]]
-# name = "Neovim"
-# icon = ''
-# path = "/home/simon/dotfiles/scripts/start-alac-with-nvim.sh"
+[[App]]
+name = "Logout"
+icon = '󰍂'
+path = "/home/simon/dotfiles/scripts/logout.sh"
 
 [[App]]
 name = "Gimp"
@@ -47,8 +47,13 @@ icon = '󰕼'
 path = "vlc"
 
 [[App]]
+name = "Emacs"
+icon = ''
+path = "emacs"
+
+[[App]]
 name = "Reaper"
-icon = ''
+icon = '󰗅'
 path = "/home/simon/opt/REAPER/reaper"
 
 [[App]]
@@ -60,6 +65,11 @@ path = "obs"
 name = "Torrents"
 icon = ''
 path = "/home/simon/dotfiles/scripts/launch-transmission-dark.sh"
+
+[[App]]
+name = "Password"
+icon = ''
+path = "/home/simon/dotfiles/scripts/get-password.sh"
 
 [[App]]
 name = "Vial"
@@ -85,11 +95,6 @@ path = "qutebrowser"
 name = "Firefox"
 icon = ''
 path = "firefox"
-
-[[App]]
-name = "Alacritty"
-icon = ''
-path = "alacritty"
 
 [[App]]
 name = "Files"

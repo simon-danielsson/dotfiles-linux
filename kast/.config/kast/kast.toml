@@ -62,6 +62,16 @@ icon = '󰄀'
 path = "obs"
 
 [[App]]
+name = "Clear downloads"
+icon = ''
+path = "/home/simon/dotfiles/scripts/clear-downloads.sh"
+
+[[App]]
+name = "Convert to webp"
+icon = ''
+path = "/home/simon/dotfiles/scripts/image-to-webp.sh"
+
+[[App]]
 name = "Torrents"
 icon = ''
 path = "/home/simon/dotfiles/scripts/launch-transmission-dark.sh"
@@ -95,6 +105,11 @@ path = "qutebrowser"
 name = "Firefox"
 icon = ''
 path = "firefox"
+
+[[App]]
+name = "Normalize/downmix audio"
+icon = ''
+path = "/home/simon/dotfiles/scripts/normalize-and-downmix-audio.sh"
 
 [[App]]
 name = "Files"

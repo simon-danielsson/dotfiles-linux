@@ -3,6 +3,7 @@
 emoji_list="
 😀 grinning face
 😃 grinning face big eyes
+🎨 paint easel
 😄 grinning smiling eyes
 😁 beaming smile
 😆 squinting laugh

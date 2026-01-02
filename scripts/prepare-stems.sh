@@ -4,8 +4,8 @@ set -u  # batch-safe
 
 # ---------------- CONFIG ----------------
 DATE=$(date +"%d-%m-%Y")
-INPUT_DIR="/home/simon/autodirs/normalize-audio/"
-OUTPUT_DIR="$INPUT_DIR/$DATE"
+INPUT_DIR="/home/simon/autodirs/prepare-stems/"
+OUTPUT_DIR="$INPUT_DIR$DATE"
 
 TARGET_TRUE_PEAK="-1"          # dBTP
 FAKE_STEREO_THRESHOLD="-70"    # dB RMS of (L - R)
@@ -99,6 +99,6 @@ echo
 done
 
 echo "All files processed."
-notify-send " Audio has been processed!"
+notify-send "  Audio has been processed!" "$OUTPUT_DIR"
 paplay "$HOME/dotfiles/sounds/dunst-1.wav" 2>/dev/null
 echo "Log written to: $LOG_FILE"

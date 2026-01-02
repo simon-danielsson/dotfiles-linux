@@ -11,7 +11,7 @@ for_window [title="kast"] floating enable
 
 exec_always --no-startup-id $wm_setting_app_compositor
 exec_always --no-startup-id dunst
-exec_always --no-startup-id picom --backend xrender -b
+exec_always --no-startup-id picom --backend glx -b
 exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -49,6 +49,7 @@ bindsym $mod+shift+space exec --no-startup-id rofi -show drun
 
 # kast app launcher
 bindsym $mod+space exec kast
+# bindsym $mod+space exec ~/dev/rust/kast/target/release/kast
 
 # change focused window within workspace
 bindsym $mod+Left focus left

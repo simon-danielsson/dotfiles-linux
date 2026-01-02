@@ -6,7 +6,7 @@ size = 10.0
 
 [Icons]
 entry = ''
-entry_icon = false
+entry_icon = true
 
 [Colors]
 text = "#ffffff"
@@ -24,94 +24,122 @@ row_height = 20
 search_hint = "Search..."
 timeout = 20
 
-# ==== Apps ====
+# ==== Applications ====
 
 [[App]]
 name = "Alacritty"
 icon = ''
 path = "alacritty"
-
-[[App]]
-name = "Logout"
-icon = '󰍂'
-path = "/home/simon/dotfiles/scripts/logout.sh"
+group = "application"
 
 [[App]]
 name = "Gimp"
 icon = ''
 path = "gimp"
+group = "application"
 
 [[App]]
 name = "VLC"
 icon = '󰕼'
 path = "vlc"
+group = "application"
 
 [[App]]
 name = "Emacs"
 icon = ''
 path = "emacs"
-
-[[App]]
-name = "Reaper"
-icon = '󰗅'
-path = "/home/simon/opt/REAPER/reaper"
+group = "application"
 
 [[App]]
 name = "OBS"
 icon = '󰄀'
 path = "obs"
-
-[[App]]
-name = "Clear downloads"
-icon = ''
-path = "/home/simon/dotfiles/scripts/clear-downloads.sh"
-
-[[App]]
-name = "Convert to webp"
-icon = ''
-path = "/home/simon/dotfiles/scripts/image-to-webp.sh"
+group = "application"
 
 [[App]]
 name = "Torrents"
 icon = ''
 path = "/home/simon/dotfiles/scripts/launch-transmission-dark.sh"
-
-[[App]]
-name = "Password"
-icon = ''
-path = "/home/simon/dotfiles/scripts/get-password.sh"
-
-[[App]]
-name = "Vial"
-icon = ''
-path = "/home/simon/AppImages/Vial-v0.7.5.AppImage"
-
-[[App]]
-name = "Set timer (30 sec)"
-icon = ''
-path = "/home/simon/dotfiles/scripts/timer-30-sec.sh"
-
-[[App]]
-name = "Audio"
-icon = ''
-path = "/home/simon/dotfiles/scripts/launch-pavucontrol-dark.sh"
+group = "application"
 
 [[App]]
 name = "Qutebrowser"
 icon = '󰖟'
 path = "qutebrowser"
+group = "application"
 
 [[App]]
 name = "Firefox"
 icon = ''
 path = "firefox"
+group = "application"
+
+# ==== audio ====
 
 [[App]]
-name = "Normalize/downmix audio"
+name = "Reaper"
+icon = '󰗅'
+path = "/home/simon/opt/REAPER/reaper"
+group = "music"
+
+[[App]] # normalize/downmix audio in ~/autodirs/prepare-stems/
+name = "Prepare stems"
 icon = ''
-path = "/home/simon/dotfiles/scripts/normalize-and-downmix-audio.sh"
+path = "/home/simon/dotfiles/scripts/prepare-stems.sh"
+group = "music"
+
+# ==== app images ====
+
+[[App]]
+name = "Vial"
+icon = ''
+path = "/home/simon/AppImages/Vial-v0.7.5.AppImage"
+group = "appimage"
+
+# ==== system ====
 
 [[App]]
 name = "Files"
 icon = ''
 path = "pcmanfm"
+group = "system"
+
+[[App]]
+name = "Audio"
+icon = ''
+path = "/home/simon/dotfiles/scripts/launch-pavucontrol-dark.sh"
+group = "system"
+
+[[App]] # log out
+name = "Logout"
+icon = '󰍂'
+path = "/home/simon/dotfiles/scripts/logout.sh"
+group = "system"
+
+# ==== scripts ====
+
+[[App]] # delete all files in ~/Downloads/
+name = "Clear downloads"
+icon = ''
+path = "/home/simon/dotfiles/scripts/clear-downloads.sh"
+group = "script"
+
+[[App]] # get a random password in global clipboard
+name = "Password"
+icon = ''
+path = "/home/simon/dotfiles/scripts/get-password.sh"
+group = "script"
+
+[[App]] # set a 30 second timer
+name = "Set timer (30 sec)"
+icon = ''
+path = "/home/simon/dotfiles/scripts/timer-30-sec.sh"
+group = "script"
+
+[[App]] # convert images in ~/autodirs/image-to-comp-webp/
+name = "Convert to webp"
+icon = ''
+path = "/home/simon/dotfiles/scripts/image-to-webp.sh"
+group = "script"
+
+

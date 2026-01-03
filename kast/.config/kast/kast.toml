@@ -2,7 +2,7 @@
 
 [Font]
 # path = "/home/simon/dotfiles/fonts/.local/share/fonts/arial.ttf"
-size = 10.0
+size = 9.0
 
 [Icons]
 entry = ''
@@ -24,59 +24,77 @@ row_height = 20
 search_hint = "Search..."
 timeout = 20
 
-# ==== Applications ====
+# ==== dev ====
 
-[[App]]
+[[App]] # terminal emulator
 name = "Alacritty"
 icon = ''
 path = "alacritty"
-group = "application"
+group = "dev"
 
-[[App]]
+[[App]] # dev environment
+name = "Emacs"
+icon = ''
+path = "emacs"
+group = "dev"
+
+# ==== image ====
+
+[[App]] # image editor
 name = "Gimp"
 icon = ''
 path = "gimp"
-group = "application"
+group = "image"
+
+[[App]] # image preview
+name = "Eye of Gnome"
+icon = ''
+path = "eog"
+group = "image"
+
+[[App]] # convert images in ~/autodirs/image-to-comp-webp/
+name = "Convert to webp"
+icon = '󱧾'
+path = "/home/simon/dotfiles/scripts/image-to-webp.sh"
+group = "image"
+
+# ==== app ====
 
 [[App]]
 name = "VLC"
 icon = '󰕼'
 path = "vlc"
-group = "application"
-
-[[App]]
-name = "Emacs"
-icon = ''
-path = "emacs"
-group = "application"
+group = "app"
 
 [[App]]
 name = "OBS"
 icon = '󰄀'
 path = "obs"
-group = "application"
+group = "app"
 
 [[App]]
 name = "Torrents"
 icon = ''
 path = "/home/simon/dotfiles/scripts/launch-transmission-dark.sh"
-group = "application"
+group = "app"
+
+# ==== browser ====
 
 [[App]]
 name = "Qutebrowser"
 icon = '󰖟'
 path = "qutebrowser"
-group = "application"
+group = "browser"
 
 [[App]]
 name = "Firefox"
 icon = ''
 path = "firefox"
-group = "application"
+group = "browser"
 
-# ==== audio ====
+# ==== music ====
 
-[[App]]
+[[App]] # DAW
 name = "Reaper"
 icon = '󰗅'
 path = "/home/simon/opt/REAPER/reaper"
@@ -88,9 +106,9 @@ icon = ''
 path = "/home/simon/dotfiles/scripts/prepare-stems.sh"
 group = "music"
 
-# ==== app images ====
+# ==== appimage ====
 
-[[App]]
+[[App]] # configure keyboard layout
 name = "Vial"
 icon = ''
 path = "/home/simon/AppImages/Vial-v0.7.5.AppImage"
@@ -98,13 +116,13 @@ group = "appimage"
 
 # ==== system ====
 
-[[App]]
+[[App]] # open pcmanfm
 name = "Files"
 icon = ''
 path = "pcmanfm"
 group = "system"
 
-[[App]]
+[[App]] # open pavucontrol
 name = "Audio"
 icon = ''
 path = "/home/simon/dotfiles/scripts/launch-pavucontrol-dark.sh"
@@ -116,30 +134,29 @@ icon = '󰍂'
 path = "/home/simon/dotfiles/scripts/logout.sh"
 group = "system"
 
-# ==== scripts ====
+# ==== helper ====
+
+[[App]] # color picker with clipboard
+name = "Color picker"
+icon = ''
+path = "/home/simon/dotfiles/scripts/color-picker.sh"
+group = "helper"
 
 [[App]] # delete all files in ~/Downloads/
 name = "Clear downloads"
 icon = ''
 path = "/home/simon/dotfiles/scripts/clear-downloads.sh"
-group = "script"
+group = "helper"
 
 [[App]] # get a random password in global clipboard
 name = "Password"
 icon = ''
 path = "/home/simon/dotfiles/scripts/get-password.sh"
-group = "script"
+group = "helper"
 
 [[App]] # set a 30 second timer
 name = "Set timer (30 sec)"
 icon = ''
 path = "/home/simon/dotfiles/scripts/timer-30-sec.sh"
-group = "script"
-
-[[App]] # convert images in ~/autodirs/image-to-comp-webp/
-name = "Convert to webp"
-icon = ''
-path = "/home/simon/dotfiles/scripts/image-to-webp.sh"
-group = "script"
-
+group = "helper"
 

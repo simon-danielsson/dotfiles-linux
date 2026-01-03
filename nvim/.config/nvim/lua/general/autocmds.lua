@@ -51,10 +51,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
                 local ignore = {
                         ["markdown"] = true,
                         ["make"]     = true,
-                        ["text"]      = true,
+                        ["text"]     = true,
                         ["typ"]      = true,
-                        ["toml"]      = true,
-                        [""]      = true,
+                        ["toml"]     = true,
+                        [""]         = true,
                 }
                 if ignore[ft] then
                         return
@@ -105,11 +105,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 autocmd("BufWritePost", {
         group = write_group,
-        pattern = { "*.sh" },
+        pattern = { "*.sh", "*.desktop" },
         callback = function()
                 vim.fn.system({ "chmod", "+x", vim.fn.expand("%:p") })
         end,
-        desc = "Make shell scripts executable",
+        desc = "Make shell scripts and .desktop files executable",
 })
 
 -- ======================================================
@@ -121,8 +121,8 @@ local files_group = augroup("FileCommands", { clear = true })
 autocmd("BufNewFile", {
         group = files_group,
         command = "silent! 0r "
-        .. vim.fn.stdpath("config")
-        .. "/templates/template.%:e",
+            .. vim.fn.stdpath("config")
+            .. "/templates/template.%:e",
         desc = "If one exists, use a template when opening a new file",
 })
 
@@ -246,6 +246,19 @@ local function ensure_terminal(cmd)
         vim.cmd("startinsert")
 end
 
+local function run_build_or_fallback(build_path, fallback_cmd)
+        -- Check if build.sh exists
+        local stat = vim.loop.fs_stat(build_path)
+        if stat then
+                -- build.sh exists
+                ensure_terminal("clear && bash \"" .. build_path .. "\"")
+        else
+                -- build.sh doesn't exist, use fallback
+                ensure_terminal('echo "build.sh doesn\'t exist, defaulting to regular build command" && ' .. fallback_cmd)
+        end
+end
+
+-- Python
 vim.api.nvim_create_autocmd("FileType", {
         group = term_group,
         pattern = "python",
@@ -253,11 +266,15 @@ vim.api.nvim_create_autocmd("FileType", {
                 vim.keymap.set("n", "<leader>m", function()
                         vim.cmd('write')
                         local python = vim.env.VIRTUAL_ENV and (vim.env.VIRTUAL_ENV .. "/bin/python") or "python3"
-                        ensure_terminal("clear && " .. python .. " " .. vim.fn.expand("%"))
+                        local file = vim.fn.expand("%")
+                        local build_path = vim.fn.expand("%:p:h") .. "/build.sh"
+                        local fallback_cmd = python .. " " .. file
+                        run_build_or_fallback(build_path, fallback_cmd)
                 end, { buffer = true, desc = "Run Python file" })
         end,
 })
 
+-- C
 vim.api.nvim_create_autocmd("FileType", {
         group = term_group,
         pattern = "c",
@@ -265,24 +282,31 @@ vim.api.nvim_create_autocmd("FileType", {
                 vim.keymap.set("n", "<leader>m", function()
                         vim.cmd('write')
                         local file = vim.fn.expand("%")
-                        local outfile = vim.fn.expand("%:r")  -- same name, no extension
-                        local cmd = string.format("clear && gcc -std=c23 -Wall -Wextra -O2 \"%s\" -o \"%s\" && ./\"%s\"", file, outfile, outfile)
-                        ensure_terminal(cmd)
+                        local outfile = vim.fn.expand("%:r") -- same name, no extension
+                        local build_path = vim.fn.expand("%:p:h") .. "/build.sh"
+                        local fallback_cmd = string.format("gcc -std=c23 -Wall -Wextra -O2 \"%s\" -o \"%s\" && ./\"%s\"",
+                                file, outfile, outfile)
+                        run_build_or_fallback(build_path, fallback_cmd)
                 end, { buffer = true, desc = "Compile and run C file" })
         end,
 })
 
+-- Rust
 vim.api.nvim_create_autocmd("FileType", {
         group = term_group,
         pattern = "rust",
         callback = function()
                 vim.keymap.set("n", "<leader>m", function()
                         vim.cmd('write')
-                        ensure_terminal("clear && cargo run")
+                        -- build.sh is in parent directory for Rust projects
+                        local build_path = vim.fn.expand("%:p:h") .. "/../build.sh"
+                        local fallback_cmd = "cargo run"
+                        run_build_or_fallback(build_path, fallback_cmd)
                 end, { buffer = true, desc = "Run Rust project" })
         end,
 })
 
+-- Terminal toggle
 vim.api.nvim_create_autocmd("BufEnter", {
         group = term_group,
         pattern = "*",
@@ -294,6 +318,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
         desc = "Open terminal in current buffer",
 })
 
+-- Cleanup terminal buffer on close
 vim.api.nvim_create_autocmd("TermClose", {
         group = term_group,
         callback = function()

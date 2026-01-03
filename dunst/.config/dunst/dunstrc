@@ -1,8 +1,8 @@
 # See dunst(5) for all configuration options
 
 [global]
-
-# sound
+title_weight = normal
+font = Monospace 9
 
 # ==== display ====
 
@@ -13,10 +13,10 @@ follow = keyboard
 
 # ==== window proportions ====
 
-# constant width of 300
-width = 300
+# constant width
+width = 250
 
-# dynamic height from 0 to 300
+# dynamic height
 height = (0, 300)
 
 # position
@@ -29,7 +29,7 @@ offset = (10, 30)
         scale = 0
 
 # Maximum number of notification (0 means no limit)
-        notification_limit = 5
+        notification_limit = 0
 
 # ==== progress bar ====
 
@@ -105,8 +105,6 @@ offset = (10, 30)
 
 ### Text ###
 
-        font = Monospace 8
-
 # The spacing between lines.  If the height is smaller than the
 # font height, it will get raised to the font height.
         line_height = 0
@@ -155,7 +153,7 @@ offset = (10, 30)
 
 # Vertical alignment of message text and icon.
 # Possible values are "top", "center" and "bottom".
-        vertical_alignment = center
+        vertical_alignment = top
 
 # Show age of message if message is older than show_age_threshold
 # seconds.
@@ -170,7 +168,7 @@ offset = (10, 30)
         ignore_newline = no
 
 # Stack together notifications with the same content
-        stack_duplicates = true
+        stack_duplicates = false
 
 # Hide the count of stacked notifications with the same content
         hide_duplicate_count = false

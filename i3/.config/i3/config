@@ -2,16 +2,18 @@
 
 # ==== fonts ====
 
-font pango:monospace 8
-font pango:0xProto Nerd Font 8
+# font pango:monospace 9
+font pango:0xProtoNerdFont 9
 
 # ==== start services ====
 
 for_window [title="kast"] floating enable
+for_window [class="Firefox"] floating disable
+for_window [class="Firefox" title=".*daniel.*"] floating disable
 
 exec_always --no-startup-id $wm_setting_app_compositor
 exec_always --no-startup-id dunst
-exec_always --no-startup-id picom --backend glx -b
+exec_always --no-startup-id picom --backend xrender -b
 exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -34,9 +36,6 @@ set $mod Mod4
 # start a terminal
 set $terminal alacritty
 bindsym $mod+a exec alacritty
-
-# file browser
-bindsym $mod+b exec pcmanfm &
 
 # screenshot
 bindsym $mod+Shift+4 exec scrot ~/Screenshots/%Y-%m-%d_%T.png

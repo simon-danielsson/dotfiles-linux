@@ -26,6 +26,7 @@ stdbuf -oL i3-msg -m -t subscribe '[ "window" ]' |
             Gimp)     LABEL=\ \ GIMP;;
             Transmission)     LABEL=\ \ Torrents;;
             Emacs)     LABEL=\ \ Emacs;;
+            notes)     LABEL=\ 󰈙\ Notes;;
             REAPER)     LABEL=\ \ REAPER;;
             OBS)     LABEL=\ 󰄀\ OBS;;
             *) continue ;;

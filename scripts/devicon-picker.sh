@@ -91,9 +91,15 @@ devicon_list="
  link
  clipboard
  pen
- brush
- paint
- cog
+󱠓 brush
+󰃣 brush
+󱝱 brush-x
+ brush
+ roller
+ paintcan
+ up
+ down
+󱧾 image-refresh
  settings
  toolbox
  record
@@ -150,6 +156,8 @@ devicon_list="
 󰨙 toggleoff
 󰔡 toggleon
  gift
+󰈙 document
+󱪝 new document
  lock
  mail
  bookmark
@@ -160,7 +168,7 @@ devicon_list="
  calendar
  clipboard
  pen
- brush
+ magnet
  paint
  cog
  settings

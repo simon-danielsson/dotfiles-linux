@@ -19,7 +19,7 @@ exec --no-startup-id dex --autostart --environment i3
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # hide the cursor if its been inactive for one minute
-exec --no-startup-id unclutter --timeout 20
+exec --no-startup-id unclutter --timeout 90
 
 # ==== audio ====
 

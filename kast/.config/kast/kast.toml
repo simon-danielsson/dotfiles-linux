@@ -81,12 +81,6 @@ group = "app"
 # ==== browser ====
 
 [[App]]
-name = "Qutebrowser"
-icon = '󰖟'
-path = "qutebrowser"
-group = "browser"
-
-[[App]]
 name = "Firefox"
 icon = ''
 path = "firefox"

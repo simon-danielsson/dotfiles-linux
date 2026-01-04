@@ -1,4 +1,2 @@
-# systemctl reboot
-
-reboot
-# shutdown now
+#!/bin/sh
+loginctl reboot

@@ -122,10 +122,22 @@ icon = ''
 path = "/home/simon/dotfiles/scripts/launch-pavucontrol-dark.sh"
 group = "system"
 
-[[App]] # log out
+[[App]]
 name = "Logout"
 icon = '󰍂'
 path = "/home/simon/dotfiles/scripts/logout.sh"
+group = "system"
+
+[[App]]
+name = "Reboot"
+icon = ''
+path = "/home/simon/dotfiles/scripts/reboot.sh"
+group = "system"
+
+[[App]]
+name = "Shutdown"
+icon = ''
+path = "/home/simon/dotfiles/scripts/shutdown.sh"
 group = "system"
 
 # ==== helper ====

@@ -1,1 +1,2 @@
-systemctl poweroff
+#!/bin/sh
+loginctl poweroff

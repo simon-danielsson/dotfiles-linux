@@ -100,6 +100,8 @@ devicon_list="
  up
  down
 󱧾 image-refresh
+ refresh
+ power
  settings
  toolbox
  record

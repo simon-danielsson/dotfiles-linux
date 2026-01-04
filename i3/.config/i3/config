@@ -11,6 +11,7 @@ for_window [title="kast"] floating enable
 for_window [class="Firefox"] floating disable
 for_window [class="Firefox" title=".*daniel.*"] floating disable
 
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id $wm_setting_app_compositor
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom --backend xrender -b

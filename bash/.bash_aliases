@@ -22,12 +22,15 @@ img() {
 }
 
 gcommit() {
-        command git add --all && git commit -m $@
-}
+        git add --all &&
+                git commit -m "$*"
+        }
 
 gpush() {
-        command git add --all && git commit -m $@ && git push
-}
+        git add --all &&
+                git commit -m "$*" &&
+                git push
+        }
 
 # open in files
 files() {

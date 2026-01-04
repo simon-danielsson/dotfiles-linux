@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 DATE=$(date +"%d-%m-%Y")
-INPUT_DIR="~/autodirs/image-to-comp-webp/"
+INPUT_DIR="~/autodir/image-to-comp-webp/"
+mkdir -p $INPUT_DIR
 
 OUTPUT_DIR="$INPUT_DIR$DATE"
 mkdir -p "$OUTPUT_DIR"

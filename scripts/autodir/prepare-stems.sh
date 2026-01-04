@@ -4,7 +4,8 @@ set -u  # batch-safe
 
 # ---------------- CONFIG ----------------
 DATE=$(date +"%d-%m-%Y")
-INPUT_DIR="/home/simon/autodirs/prepare-stems/"
+INPUT_DIR="/home/simon/autodir/prepare-stems/"
+mkdir -p $INPUT_DIR
 OUTPUT_DIR="$INPUT_DIR$DATE"
 
 TARGET_TRUE_PEAK="-1"          # dBTP

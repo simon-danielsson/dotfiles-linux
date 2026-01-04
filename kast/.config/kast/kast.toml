@@ -52,10 +52,10 @@ icon = ''
 path = "eog"
 group = "image"
 
-[[App]] # convert images in ~/autodirs/image-to-comp-webp/
+[[App]] # convert images in ~/autodir/image-to-comp-webp/
 name = "Convert to webp"
 icon = '󱧾'
-path = "/home/simon/dotfiles/scripts/image-to-webp.sh"
+path = "/home/simon/dotfiles/scripts/autodir/image-to-webp.sh"
 group = "image"
 
 # ==== app ====
@@ -94,10 +94,10 @@ icon = '󰗅'
 path = "/home/simon/opt/REAPER/reaper"
 group = "music"
 
-[[App]] # normalize/downmix audio in ~/autodirs/prepare-stems/
+[[App]] # normalize/downmix audio in ~/autodir/prepare-stems/
 name = "Prepare stems"
 icon = ''
-path = "/home/simon/dotfiles/scripts/prepare-stems.sh"
+path = "/home/simon/dotfiles/scripts/autodir/prepare-stems.sh"
 group = "music"
 
 # ==== appimage ====
@@ -119,25 +119,25 @@ group = "system"
 [[App]] # open pavucontrol
 name = "Audio"
 icon = ''
-path = "/home/simon/dotfiles/scripts/launch-pavucontrol-dark.sh"
+path = "/home/simon/dotfiles/scripts/system/launch-pavucontrol-dark.sh"
 group = "system"
 
 [[App]]
 name = "Logout"
 icon = '󰍂'
-path = "/home/simon/dotfiles/scripts/logout.sh"
+path = "/home/simon/dotfiles/scripts/system/logout.sh"
 group = "system"
 
 [[App]]
 name = "Reboot"
 icon = ''
-path = "/home/simon/dotfiles/scripts/reboot.sh"
+path = "/home/simon/dotfiles/scripts/system/reboot.sh"
 group = "system"
 
 [[App]]
 name = "Shutdown"
 icon = ''
-path = "/home/simon/dotfiles/scripts/shutdown.sh"
+path = "/home/simon/dotfiles/scripts/system/shutdown.sh"
 group = "system"
 
 # ==== helper ====
